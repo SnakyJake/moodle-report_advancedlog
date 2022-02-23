@@ -69,13 +69,10 @@ class report_advancedlog_table_log extends table_sql {
             $headers = array(get_string('course'));
         }
 
-        /*
-        $this->define_columns(array_merge($cols, array('time', 'fullnameuser', 'relatedfullnameuser', 'context', 'component',
-                'eventname', 'description', 'origin', 'ip')));
-        */
-        $this->define_columns(array_merge($cols, array('time', 'fullnameuser', 'relatedfullnameuser', 'context', 'component',
-                'eventname', 'description')));
-        $this->define_headers(array_merge($headers, array(
+        if(is_siteadmin()){
+            $this->define_columns(array_merge($cols, array('time', 'fullnameuser', 'relatedfullnameuser', 'context', 'component',
+            'eventname', 'description', 'origin', 'ip')));
+            $this->define_headers(array_merge($headers, array(
                 get_string('time'),
                 get_string('fullnameuser'),
                 get_string('eventrelatedfullnameuser', 'report_advancedlog'),
@@ -83,10 +80,24 @@ class report_advancedlog_table_log extends table_sql {
                 get_string('eventcomponent', 'report_advancedlog'),
                 get_string('eventname'),
                 get_string('description'),
-                //get_string('eventorigin', 'report_advancedlog'),
-                //get_string('ip_address')
+                get_string('eventorigin', 'report_advancedlog'),
+                get_string('ip_address')
                 )
             ));
+        } else {
+            $this->define_columns(array_merge($cols, array('time', 'fullnameuser', 'relatedfullnameuser', 'context', 'component',
+            'eventname', 'description')));
+            $this->define_headers(array_merge($headers, array(
+                get_string('time'),
+                get_string('fullnameuser'),
+                get_string('eventrelatedfullnameuser', 'report_advancedlog'),
+                get_string('eventcontext', 'report_advancedlog'),
+                get_string('eventcomponent', 'report_advancedlog'),
+                get_string('eventname'),
+                get_string('description'),
+                )
+            ));
+        }
         $this->collapsible(false);
         $this->sortable(false);
         $this->pageable(true);
