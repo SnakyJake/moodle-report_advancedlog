@@ -1,12 +1,12 @@
-#page-report-log-index .info {
+#page-report-customlog-index .info {
     margin: 10px;
 }
 
-#page-report-log-index .logselectform {
+#page-report-customlog-index .logselectform {
     margin: 10px auto;
 }
 
-#page-report-log-user .info {
+#page-report-customlog-user .info {
     margin: 10px;
     text-align: center;
 }
