@@ -26,8 +26,8 @@
 
 defined('MOODLE_INTERNAL') || die;
 
-if (!defined('REPORT_advancedLOG_MAX_DISPLAY')) {
-    define('REPORT_advancedLOG_MAX_DISPLAY', 150); // days
+if (!defined('REPORT_ADVANCEDLOG_MAX_DISPLAY')) {
+    define('REPORT_ADVANCEDLOG_MAX_DISPLAY', 150); // days
 }
 
 require_once(__DIR__.'/lib.php');
@@ -556,7 +556,7 @@ function report_advancedlog_userall_data($course, $user, $logreader) {
         $courseselect = $course->id;
     }
 
-    $maxseconds = REPORT_advancedLOG_MAX_DISPLAY * 3600 * 24;  // Seconds.
+    $maxseconds = REPORT_ADVANCEDLOG_MAX_DISPLAY * 3600 * 24;  // Seconds.
     if ($timenow - $course->startdate > $maxseconds) {
         $course->startdate = $timenow - $maxseconds;
     }
