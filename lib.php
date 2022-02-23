@@ -126,7 +126,7 @@ function report_advancedlog_can_access_user_report($user, $course) {
 function report_advancedlog_extend_navigation_module($navigation, $cm) {
     if (has_capability('report/advancedlog:view', context_course::instance($cm->course))) {
         $url = new moodle_url('/report/advancedlog/index.php', array('chooselog'=>'1','id'=>$cm->course,'modid'=>$cm->id));
-        $navigation->add(get_string('logs')." (".get_string('advanced').")", $url, navigation_node::TYPE_SETTING, null, 'logreport');
+        $navigation->add(get_string('logs')." (".get_string('advanced').")", $url, navigation_node::TYPE_SETTING, null, 'advancedlogreport');
     }
 }
 

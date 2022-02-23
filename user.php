@@ -85,9 +85,9 @@ $navigationnode = array(
         'url' => new moodle_url('/report/advancedlog/user.php', array('id' => $user->id, 'course' => $course->id, 'mode' => $mode))
     );
 if ($mode === 'today') {
-    $navigationnode['name'] = get_string('todaylogs');
+    $navigationnode['name'] = get_string('todaylogs')." (".get_string('advanced').")";
 } else {
-    $navigationnode['name'] = get_string('alllogs');
+    $navigationnode['name'] = get_string('alllogs')." (".get_string('advanced').")";
 }
 $PAGE->add_report_nodes($user->id, $navigationnode);
 
