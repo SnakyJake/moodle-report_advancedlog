@@ -27,8 +27,9 @@
 defined('MOODLE_INTERNAL') || die;
 
 // Just a link to course report.
+/*
 $ADMIN->add('reports', new admin_externalpage('reportadvancedlog', get_string('log', 'admin'),
         $CFG->wwwroot . "/report/advancedlog/index.php?id=0", 'report/advancedlog:view'));
-
+*/
 // No report settings.
 $settings = null;
